@@ -20,7 +20,7 @@ c.execute("""
     CREATE TABLE IF NOT EXISTS user (
         id INTEGER PRIMARY KEY,
         email TEXT NOT NULL,
-        phone_number INTEGER,
+        phone_number TEXT,
         username TEXT NOT NULL,
         password TEXT NOT NULL,
         role TEXT NOT NULL,
