@@ -42,6 +42,6 @@ If you're done working, you can deactivate the environment:
 deactivate
 ```
 
-### 🔗 References
+### References
 - [Python Virtual Environments](https://docs.python.org/3/library/venv.html)
 - [pip Install Requirements](https://pip.pypa.io/en/stable/user_guide/#requirements-files)
