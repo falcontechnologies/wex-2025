@@ -12,25 +12,46 @@ Before starting this section, it is assumed that you have successfully completed
 and the [Python Package Set Up](#Python-Packages-Set-Up).
 
 
-### Running Flask
+### Installing Flask
+Before Flask is ready to be installed, the virtual environment must first be activated using the following commands:
 
-Before Flask is ready to run, the virtual environment must first be activated using the following command:
+#### 1.Folder Navigation
+type the following command into Terminal/Linux Command Line/PowerShell/Command Prompt to
+navigate to the folder where the program is stored:
+
+    cd subscriptionManager
+
+Replace the name '*subscriptionManager*' with the name of the folder where the program is stored.
+
+#### 2.Activating Virtual Environment
 
 On macOS/Linux, type the following command into Terminal/Linux Command Line:
 
-    source subscriptionManager/venv/bin/activate
+    source venv/bin/activate
 
 On Windows, type the following command into PowerShell/Command Prompt:
 
-    subscriptionManager\venv\Scripts\activate
+    venv\Scripts\activate
 
-Replace the name '*subscriptionManager*' with the name of the subcription manager folder
-and the name '*venv*' with the name of the virtual environment. 
+Replace the name '*venv*' with the name of the virtual environment. 
 Your shell prompt will change to show the name of the activated environment.
-    
-Now, type in the following command to start up the application:
+
+#### 3.Downloading Flask
+
+Now that you are in the virtual environment, type the following command to install 
+Flask:
+
+    pip install Flask
+
+
+### Running Flask
+
+Now that you have Flask in the virtual environment,
+type in the following command to start up the application:
 
     flask --app main run
+
+Replace the name '*main*' with the main file of this application.
 
 This will start up the application in a development server at http://127.0.0.1:5000
 ### References
