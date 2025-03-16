@@ -38,7 +38,7 @@ Your shell prompt will change to show the name of the activated environment.
 
 #### 3.Downloading Flask
 
-Now that you are in the virtual environment, type the following command to install 
+If Flask is not already in the virtual environment, type the following command to install 
 Flask:
 
     pip install Flask
@@ -54,6 +54,14 @@ type in the following command to start up the application:
 Replace the name '*main*' with the main file of this application.
 
 This will start up the application in a development server at http://127.0.0.1:5000
+
+You will know if the application is working when the following message pops up:
+
+     * Serving Flask app 'main'
+     * Debug mode: off
+    WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+     * Running on http://127.0.0.1:5000
+    Press CTRL+C to quit
 ### References
 
 https://flask.palletsprojects.com/en/stable/quickstart/
