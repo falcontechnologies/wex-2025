@@ -34,14 +34,3 @@ Check that the packages are correctly installed:
 ```sh
 pip list
 ```
-
-### 4. (Optional) Deactivate Virtual Environment
-If you're done working, you can deactivate the environment:
-
-```sh
-deactivate
-```
-
-### References
-- [Python Virtual Environments](https://docs.python.org/3/library/venv.html)
-- [pip Install Requirements](https://pip.pypa.io/en/stable/user_guide/#requirements-files)
