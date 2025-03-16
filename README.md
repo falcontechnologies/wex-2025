@@ -34,3 +34,7 @@ Check that the packages are correctly installed:
 ```sh
 pip list
 ```
+
+### References
+- [Python Virtual Environments](https://docs.python.org/3/library/venv.html)
+- [pip Install Requirements](https://pip.pypa.io/en/stable/user_guide/#requirements-files)
