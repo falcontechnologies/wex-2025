@@ -42,5 +42,5 @@ Python Virtual Set Up
 
     6. Deactivating the Virtual Environment:
         To exit the virtual environment, run:
- 
+
         deactivate
