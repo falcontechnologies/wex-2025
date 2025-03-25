@@ -1,5 +1,6 @@
 # wex-2025
 Work Experience 2025 - Subscription Manager
+
 ## Database Migration Set Up
 
 # Alembic & SQLAlchemy Migrations Guide
@@ -105,6 +106,73 @@ There are additional resources provided in the project wiki.
 ### Handling Changes to the Data Model
 
 ### Flask Set Up
+
+This section will teach you how to run the application that has been created using Flask.
+
+
+#### PreRequisites
+
+Before starting this section, it is assumed that you have successfully completed the [Virtual Environment Set Up](#Virtual-Environment-Set-Up)
+and the [Packages Set Up](#Packages-Set-Up).
+
+
+#### Installing Flask
+Before Flask is ready to be installed, the virtual environment must first be activated using the following commands:
+
+##### 1.Folder Navigation
+type the following command into Terminal/Linux Command Line/PowerShell/Command Prompt to
+navigate to the folder where the program is stored:
+
+    cd subscriptionManager
+
+Replace the name '*subscriptionManager*' with the name of the folder where the program is stored.
+
+##### 2.Activating Virtual Environment
+
+On macOS/Linux, type the following command into Terminal/Linux Command Line:
+
+    source venv/bin/activate
+
+On Windows, type the following command into PowerShell/Command Prompt:
+
+    venv\Scripts\activate
+
+Replace the name '*venv*' with the name of the virtual environment. 
+Your shell prompt will change to show the name of the activated environment.
+
+##### 3.Downloading Flask
+
+If Flask is not already in the virtual environment, type the following command to install 
+Flask:
+
+    pip install Flask
+
+
+#### Running Flask
+
+Now that you have Flask in the virtual environment,
+type in the following command to start up the application:
+
+    flask --app main run
+
+Replace the name '*main*' with the main file of this application.
+
+This will start up the application in a development server at http://127.0.0.1:5000
+
+You will know if the application is working when the following message pops up:
+
+     * Serving Flask app 'main'
+     * Debug mode: off
+    WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+     * Running on http://127.0.0.1:5000
+    Press CTRL+C to quit
+#### References
+
+https://flask.palletsprojects.com/en/stable/quickstart/
+
+https://flask.palletsprojects.com/en/stable/installation/
+
+https://python.land/virtual-environments/virtualenv
 
 ## Working Data
 A small collection of default data is provided as a SQL script to allow you to work
