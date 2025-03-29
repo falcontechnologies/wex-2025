@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Subscription Manager</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Renewal Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sub in subscriptions %}
+            <tr>
+                <td>{{ sub.name }}</td>
+                <td>{{ sub.price }}</td>
+                <td>{{ sub.renewal_date }}</td>
+                <td style="width:80px">
+                    <button class="button editButton">Edit</button>
+                    <button class="button delButton">Del</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button class="button">Add</button>
+</body>
+</html>

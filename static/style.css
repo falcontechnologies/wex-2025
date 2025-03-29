@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #3dc2a1;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.button {
+    background-color: #3dc2a1;
+    padding: 20px;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+    color: white;
+    font-size: 15px;
+    border: 1px solid #3dc2a1;
+
+}
+
+.button:hover {
+    background-color: white;
+    color: #3dc2a1;
+}
+
+.button:active {
+    background-color: #3dc2a1;
+    transform: translateY(4px);
+}
+
+.editButton,.delButton {
+    padding: 5px;
+
+}
+
+.editButton {
+    background-color: skyblue;
+}
+
+.editButton:active {
+    background-color: skyblue;
+}
+
+.delButton {
+    background-color: red;
+}
+
+.delButton:active {
+    background-color: red;
+}
