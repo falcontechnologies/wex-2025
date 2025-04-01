@@ -1,0 +1,29 @@
+#Prompt
+Generate sample SQL insert statements for two tables: user and subscription.
+
+- The `user` table should have at least two rows with fields:
+  - `id`: Integer
+  - `email`: Unique email address
+  - `phone_number`: String
+  - `username`: Unique username
+  - `password`: Hashed string
+  - `role`: 'customer'
+  - `created_at`: Current timestamp
+  - `last_login`: Nullable timestamp
+
+- The `subscription` table should have at least ten rows with fields:
+  - `id`: Integer
+  - `user_id`: Foreign key linking to `user.id`
+  - `name`: Subscription name
+  - `service_provider`: Service provider name
+  - `start_date`: Subscription start date
+  - `expiry_date`: Nullable subscription end date
+  - `is_trial`: 0 or 1
+  - `is_recurring`: 0 or 1
+  - `payment_frequency`: 'Monthly' or 'Yearly'
+  - `cost`: Float value
+  - `status`: 'Active' or 'Expired'
+  - `subscription_type`: e.g., 'Streaming', 'Music', etc.
+  - `created_at`: Current timestamp
+
+Ensure that the `user_id` values in `subscription` reference existing users in the `user` table.
