@@ -1,110 +1,197 @@
-# wex-2025
+> Project: wex-2025 Work Experience
+>
+> Purpose: A Subscription Manager to keep track of recurring subscriptions
+>
+> Description: A collection of records that track the subscription attributes,
+> defined in a data model and provides a way to query and view the collection
 
-Work Experience 2025 - Subscription Manager
+# Work Experience 2025 - Subscription Manager
 
-01-Python_Virtual_Set_Up
-Python Virtual Set Up
+----
+## Introduction
+Subscription Manager is a **Python** application using the **Flask** framework and
+the **SQLite** embedded database to provide a durable record of subscriptions and
+their attributes.
 
-    1. Check if Python is Installed
-        Ensure Python is installed on your system by running:
+---
+## Getting Started
+To set up an environment for development, you will need to follow the subsequent sections.
+This assumes that you have the code base installed locally and tracked with git.
 
-        python --version
+There are additional resources provided in the project wiki.
 
-        or, if you use python3:
+Note that we are using Python 3.13 for this application. Any dependencies
+should be included in the file ```requirements.txt```. For information
+on the format of this file, please refer to the
+[pip documentation](https://pip.pypa.io/en/stable/reference/requirements-file-format/)
 
-        python3 --version
+### Virtual Environment Set Up  {#venv}
 
-    2. Create a Virtual Environment
-        Navigate to your project folder and run:
+#### Checklist
+* Check for Python
+* Create a virtual environment (venv)
+* Activate the venv
+* Verify setup
+* On exit: Deactivate the venv
 
-        python -m venv venv
+#### Check for Python
 
-        or if you use python3:
+Ensure Python is installed on your system by running:
 
-        python3 -m venv venv
+```
+python3 --version
+```
+You should confirm that you have an alias to the python commands to 
+protect against the case that you also have Python 2.7 installed.
 
-    3. Activate the Virtual Environment
-        Windows (Command Prompt): venv\Scripts\activate
+You can confirm this by running
+```
+python --version
+```
+and ensuring that it is not some other version of Python running.
 
-        Windows (PowerShell): venv\Scripts\Activate.ps1
+Subsequent sections and commands assume that running any command will
+execute the correct Python 3 family command.
 
-        macOS/Linux: source venv/bin/activate
+#### Create a virtual environment
+A virtual environment is used in this project to keep your project libraries
+and packages separate from any other Python packages or versions. It stores
+an optional Python version and the required packages for the project to run
+in the virtual environment.
 
-    4. Install Dependencies
-        Once inside the virtual environment, install the required dependencies with:
+You can name the virtual environment anything you want. It **MUST** be excluded
+from the files committed to *git*.
 
-        pip install -r requiredfile
-        (make sure requredfile is the dependencies you need)
+For example, we could use the name *wex* for the directory holding the
+virtual environment.
 
-    5. Verify Setup
-        Check that the environment is working correctly:
+Navigate to your project folder and run:
 
-        python -m pip list
+```
+python -m venv wex
+```
 
-    6. Deactivating the Virtual Environment:
-        To exit the virtual environment, run:
+#### Activate the virtual environment
+macOS/Linux: 
+```
+source wex/bin/activate
+```
 
-        deactivate
-=======
-## Database Migration Set Up
+Windows (Command Prompt):
+``` 
+wex\Scripts\activate
+```
 
-# Alembic & SQLAlchemy Migrations Guide
+Windows (PowerShell):
+```
+wex\Scripts\Activate.ps1
+```
+If you are running an integrated development tool like VSCode or IntelliJ,
+please refer to the application documentation for the correct way to set up
+a virtual environment.
 
-## Installation
+#### Verify Setup
+Check that the environment is working correctly:
+```aiignore
+pip list
+```
+or
+```
+python -m pip list
+```
+
+#### Deactivating the Virtual Environment:
+To exit the virtual environment, run:
+
+```
+deactivate
+```
+---
+
+### Packages Set Up  {#packages}
+You must be inside the virtual environment. See the above steps.
+To set up the required Python libraries for this project, run this step:
+```
+pip install -r requirements.txt
+```
+Note that packages should be pinned to specific versions or major.minor versions.
+
+You can confirm the installed packages using this command:
+```sh
+pip list
+```
+
+Note that packages should remain installed in the *venv* between sessions.
+
+---
+### Connecting to SQLite
+
+Connecting to SQLite is performed in code. Please refer to the codebase
+for more details.
+
+Note that as deployed, the application and database run locally.
+
+---
+
+## Database Migration Set Up and Changes to the Data Model
+
+The selected migration tool for this project is [Alembic](https://alembic.sqlalchemy.org/en/latest/)
+
+### Installation
 To get started with **Alembic** and **SQLAlchemy**, install them using pip:
 ```bash
 pip install alembic sqlalchemy
 ```
 
-## Creating Migrations
+### Creating Migrations
 To create a new migration based on your SQLAlchemy models:
 ```bash
 alembic revision --autogenerate -m "Your migration message"
 ```
 
-## Applying Migrations
+### Applying Migrations
 To apply the latest migration:
 ```bash
 alembic upgrade head
 ```
 
-## Common Commands
-### Upgrade to the Latest Migration
+### Common Commands
+#### Upgrade to the Latest Migration
 ```bash
 alembic upgrade head
 ```
 
-### Upgrade to a Specific Migration
+#### Upgrade to a Specific Migration
 ```bash
 alembic upgrade <revision_id>
 ```
 
-### Downgrade to a Previous Migration
+#### Downgrade to a Previous Migration
 ```bash
 alembic downgrade <revision_id>
 ```
 
-### Downgrade to the Base (Initial State)
+#### Downgrade to the Base (Initial State)
 ```bash
 alembic downgrade base
 ```
 
-### Check Current Revision
+#### Check Current Revision
 ```bash
 alembic current
 ```
 
-### Show Migration History
+#### Show Migration History
 ```bash
 alembic history
 ```
 
-### Generate a New Empty Migration
+#### Generate a New Empty Migration
 ```bash
 alembic revision -m "Your migration message"
 ```
 
-## Example Workflow
+### Example Workflow
 1. Make changes to your **SQLAlchemy models**.
 2. Generate a new migration:
    ```bash
@@ -120,85 +207,33 @@ alembic revision -m "Your migration message"
    alembic downgrade -1
    ```
 
+----
+## Running the Application
 
+The application uses the Flask framework.
 
-> Project: wex-2025 Work Experience
-> 
-> Purpose: A Subscription Manager to keep track of recurring subscriptions
-> 
-> Description: A collection of records that track the subscription attributes,
-> defined in a data model and provides a way to query and view the collection
-  
-# Work Experience 2025 - Subscription Manager
+### Prerequisites
 
-## Introduction
-Subscription Manager is a **Python** application using the **Flask** framework and
-the **SQLite** embedded database to provide a durable record of subscriptions and
-their attributes.
+Before starting this section, it is assumed that you have successfully completed the [Virtual Environment Set Up](#Virtual-Environment-Set)
+and the [Packages Set Up](#packages-set-up-packages).
 
-## Getting Started
-To set up an enviroment for development, you will need to follow the subsequent sections.
-This assumes that you have the code base installed locally and tracked with git.
-
-There are additional resources provided in the project wiki.
-
-### Virtual Environment Set Up
-
-### Packages Set Up
-
-### Connecting to SQLite
-
-### Handling Changes to the Data Model
-
-### Flask Set Up
-
-This section will teach you how to run the application that has been created using Flask.
-
-
-#### PreRequisites
-
-Before starting this section, it is assumed that you have successfully completed the [Virtual Environment Set Up](#Virtual-Environment-Set-Up)
-and the [Packages Set Up](#Packages-Set-Up).
-
-
-#### Installing Flask
-Before Flask is ready to be installed, the virtual environment must first be activated using the following commands:
-
-##### 1.Folder Navigation
-type the following command into Terminal/Linux Command Line/PowerShell/Command Prompt to
-navigate to the folder where the program is stored:
-
-    cd subscriptionManager
-
-Replace the name '*subscriptionManager*' with the name of the folder where the program is stored.
-
-##### 2.Activating Virtual Environment
-
-On macOS/Linux, type the following command into Terminal/Linux Command Line:
-
-    source venv/bin/activate
-
-On Windows, type the following command into PowerShell/Command Prompt:
-
-    venv\Scripts\activate
-
-Replace the name '*venv*' with the name of the virtual environment. 
-Your shell prompt will change to show the name of the activated environment.
-
-##### 3.Downloading Flask
+### Installing Flask
+Before Flask is installed, the virtual environment must be activated. See the above sections
+for details.
 
 If Flask is not already in the virtual environment, type the following command to install 
 Flask:
-
-    pip install Flask
-
-
-#### Running Flask
+```
+pip install Flask
+```
+### Running Flask
 
 Now that you have Flask in the virtual environment,
 type in the following command to start up the application:
 
-    flask --app main run
+```
+flask --app main run
+```
 
 Replace the name '*main*' with the main file of this application.
 
@@ -211,59 +246,33 @@ You will know if the application is working when the following message pops up:
     WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
      * Running on http://127.0.0.1:5000
     Press CTRL+C to quit
-#### References
 
-https://flask.palletsprojects.com/en/stable/quickstart/
+### Notes
+
+@security
+
+Flask appears to require the installation of pyaudio (!!!) and may require a security review.
+See the [pypi note](https://pypi.org/project/PyAudio/) on installation.
+
+---
+
+## Working Data
+
+A small collection of default data is provided as a SQL script to allow you to work
+with testable data.
+
+The details of adding and restoring this data set is __TBD__.
+
+---
+
+## References
+
+[Python Virtual Environments - venv](https://docs.python.org/3/library/venv.html)
+
+[pip Install Requirements](https://pip.pypa.io/en/stable/user_guide/#requirements-files)
+
+[Flask Quickstart](https://flask.palletsprojects.com/en/stable/quickstart/)
 
 https://flask.palletsprojects.com/en/stable/installation/
 
 https://python.land/virtual-environments/virtualenv
-
-## Working Data
-A small collection of default data is provided as a SQL script to allow you to work
-with testable data.
-
-The details of adding and restoring this data set is TBD.
-
-## Running the Application
-
-TBD
-
-## Python Packages Set Up
-
-To set up the required Python libraries for this project, follow these steps:
-
-### 1. Create a Virtual Environment
-Run the following command to create a virtual environment:
-
-```sh
-python -m venv venv
-```
-
-- On **macOS/Linux**, activate it using:
-  ```sh
-  source venv/bin/activate
-  ```
-- On **Windows**, use:
-  ```sh
-  venv\Scripts\activate
-  ```
-
-### 2. Install Dependencies
-Use the package manager `pip` to install all necessary libraries from the `requirements.txt` file:
-
-```sh
-pip install -r requirements.txt
-```
-
-### 3. Verify Installation
-Check that the packages are correctly installed:
-
-```sh
-pip list
-```
-
-### References
-- [Python Virtual Environments](https://docs.python.org/3/library/venv.html)
-- [pip Install Requirements](https://pip.pypa.io/en/stable/user_guide/#requirements-files)
-main
