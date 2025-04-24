@@ -13,8 +13,12 @@
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Price</th>
-                <th>Renewal Date</th>
+                <th>Cost</th>
+                <th>Renewal Date</th> 
+                <th>Recurring?</th>
+                <th>Payment Frequency</th>
+                <th>Status</th>
+                <th>Type</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -22,8 +26,12 @@
             {% for sub in subscriptions %}
             <tr>
                 <td>{{ sub.name }}</td>
-                <td>{{ sub.price }}</td>
-                <td>{{ sub.renewal_date }}</td>
+                <td>{{ sub.cost }}</td>
+                <td>{{ sub.expiry_date }}</td>
+                <td>{{ sub.is_recurring }}</td>
+                <td>{{ sub.payment_frequency }}</td>
+                <td>{{ sub.status }}</td>
+                <td>{{ sub.subscription_type }}</td>
                 <td style="width:80px">
                     <button class="button editButton">Edit</button>
                     <button class="button delButton">Del</button>
